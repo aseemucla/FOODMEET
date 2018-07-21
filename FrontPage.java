@@ -9,6 +9,9 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -56,6 +59,33 @@ public class FrontPage extends AppCompatActivity {
         customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+
+        getMenuInflater().inflate(R.menu.menu_front_page, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+
+        Intent intent = new Intent(this, SettingsMenu.class);
+        intent.putExtra("str0", username);
+        startActivity(intent);
+
+        return true;
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        customAdapter.notifyDataSetChanged();
     }
 
     public class HttpGetRequest extends AsyncTask<String, String, String> {
@@ -213,7 +243,9 @@ public class FrontPage extends AppCompatActivity {
 
 
                 try{
-                    String url = "http://aseemapi.us.openode.io/?desiredMethod=CHECKFREE&ufood=" + params[1] + "&uhour=" + rightNow.get(Calendar.HOUR_OF_DAY) + "uday=" + currday;
+                    Log.d("mykey", rightNow.get(Calendar.HOUR_OF_DAY) + " and " + currday);
+                    String url = "http://aseemapi.us.openode.io/?desiredMethod=CHECKFREE&ufood=" + params[1] + "&uhour=" + rightNow.get(Calendar.HOUR_OF_DAY) + "&uday=" + currday;
+                    Log.d("mykey", url);
                     URL obj = new URL(url);
                     HttpURLConnection con = (HttpURLConnection) obj.openConnection();
                     con.setRequestMethod("GET");
