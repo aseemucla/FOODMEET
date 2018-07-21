@@ -8,7 +8,7 @@ server.js contains the backend Javascript API, while FrontPage.java contains cod
 
 Screenshot of the application in action:
 
-![screen](https://raw.githubusercontent.com/aseem191/FOODMEET/master/frontpage.PNG)
+![screen](https://raw.githubusercontent.com/aseem191/FOODMEET/master/Screens/foodmeetscreen3.PNG)
 
 
 Planned release of version 0.1 soon, with the features encompassed by the group interface.
