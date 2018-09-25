@@ -6,8 +6,8 @@ The folder titled "Screens" contains screenshots of the app in action. server.js
 
 Videos of the application in action:
 
-![vid1](https://github.com/aseem191/Foodmeet/blob/master/videodemo1.gif?raw=true)
-![vid2](https://github.com/aseem191/Foodmeet/blob/master/videodemo2.gif?raw=true)
+![vid1](https://github.com/aseem191/Foodmeet/blob/master/videodemo1.gif?raw=true&s=200)
+![vid2](https://github.com/aseem191/Foodmeet/blob/master/videodemo2.gif?raw=true&s=200)
 
 
 All code is in the two zipped folders. foodmeet.zip contains Android Studio frontend code, while foodmeetbackend.zip has Node.js backend code.
